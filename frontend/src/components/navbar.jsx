@@ -1,7 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import RegistrationForm from "./RegistrationForm";
-import LoginPage from "./login";
 
 function Navbar() {
   return (

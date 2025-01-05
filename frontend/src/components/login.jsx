@@ -31,6 +31,7 @@ const LoginPage = () => {
         "https://localhost:3000/api/login",
         data
       );
+
       console.log(response.data);
     } catch (error) {
       setError("Login failed. Please check your credentials and try again.");

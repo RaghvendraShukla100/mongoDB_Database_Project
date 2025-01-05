@@ -14,8 +14,8 @@ function App() {
   console.log(users);
 
   return (
-    <div className="p-5 m-5 mx-auto w-fit">
-      <h1 className="font-semibold uppercase mb-10 text-orange-500">
+    <div className="p-5  mt-16  mx-auto w-fit">
+      <h1 className="font-semibold uppercase mb-4 text-orange-500">
         mongodb database connection
       </h1>
       <h1 className="bg-slate-500 uppercase text-center">

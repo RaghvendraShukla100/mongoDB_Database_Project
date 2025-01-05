@@ -36,7 +36,7 @@ const RegistrationForm = () => {
   const password = watch("password");
 
   return (
-    <div className="max-w-xl mx-auto mt-10 mb-28 p-4 shadow-md rounded-lg bg-white">
+    <div className="max-w-xl mx-auto  my-20 p-4 shadow-md rounded-lg bg-white">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-wrap -mx-2 mb-2">
           <div className="w-full md:w-1/2 px-2 mb-2">
