@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import CryptoJS from "crypto-js";
 import axios from "axios";
+import { UserContext } from "../context/userContext.jsx";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { setUser } = useContext(UserContext);
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -28,10 +30,10 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post(
-        "https://localhost:3000/api/login",
+        "http://localhost:3000/api/login",
         data
       );
-
+      setUser(response.data); // Save response.data in context
       console.log(response.data);
     } catch (error) {
       setError("Login failed. Please check your credentials and try again.");

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-
+import { UserContext } from "../context/userContext";
 function Navbar() {
+  const { user } = useContext(UserContext);
+  user && console.log("from nav bar component : ", user[0].name);
+
   return (
     <div
       className="fixed top-0 left-0 w-full text-gray-100 h-16 flex justify-center items-center bg-gray-900"
@@ -50,8 +53,16 @@ function Navbar() {
           </NavLink>
         </li>
       </ul>
-      <div>
-        <img src="" alt="" />
+      {/* user image in the navbar */}
+      <div className="ml-20 w-12 h-12  overflow-clip rounded-full">
+        {user ? (
+          <img src={user[0].img} alt={user[0].name} className="w-full h-full" />
+        ) : (
+          <img
+            src="https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png"
+            className="w-full h-full"
+          />
+        )}
       </div>
     </div>
   );
