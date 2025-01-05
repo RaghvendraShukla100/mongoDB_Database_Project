@@ -7,7 +7,6 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [] = useContext();
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -26,10 +25,10 @@ const LoginPage = () => {
       return CryptoJS.SHA256(pass).toString(CryptoJS.enc.Hex);
     };
     let data = { username: username, password: hashPassword(password) };
-    // console.log(data);
+
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/login",
+        "https://localhost:3000/api/login",
         data
       );
       console.log(response.data);
